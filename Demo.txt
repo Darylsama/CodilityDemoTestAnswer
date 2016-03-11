@@ -1,0 +1,19 @@
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 8
+        int result = -1;
+        long leftSum = 0;
+        long rightSum = 0;
+        if(A.length==0) return result;
+        for(int i=1;i<A.length;i++){
+            rightSum += A[i];
+            }
+        if(leftSum == rightSum) result = 0;
+        for(int i=1;i<A.length;i++){
+            leftSum += A[i-1];
+            rightSum -= A[i];
+            if(leftSum == rightSum) result = i;
+            }
+        return result;
+    }
+}
